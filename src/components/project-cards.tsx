@@ -192,9 +192,14 @@ function SwipeCard({
   isTop: boolean;
 }) {
   const x = useMotionValue(0);
-  const rotate = useTransform(x, [-200, 200], [-15, 15]);
-  const opacity = useTransform(x, [-200, -100, 0, 100, 200], [0.5, 1, 1, 1, 0.5]);
   const shouldReduceMotion = useReducedMotion();
+  // Flatten tilt when the user prefers reduced motion (hook config is static).
+  const rotate = useTransform(x, [-200, 200], shouldReduceMotion ? [0, 0] : [-12, 12]);
+  const opacity = useTransform(x, [-200, -100, 0, 100, 200], [0.4, 1, 1, 1, 0.4]);
+  // Subtle press-down while dragging + cover parallax + edge glare (transform/opacity only).
+  const cardScale = useTransform(x, [-200, 0, 200], [0.97, 1, 0.97]);
+  const imgX = useTransform(x, [-200, 200], shouldReduceMotion ? [0, 0] : [16, -16]);
+  const glareOpacity = useTransform(x, [-200, 0, 200], [0.22, 0, 0.22]);
   
   // Pre-compute transforms at top level to avoid conditional hook calls
   const skipOpacity = useTransform(x, [-100, 0], [1, 0]);
@@ -210,43 +215,56 @@ function SwipeCard({
 
   return (
     <motion.div
-      className="absolute inset-0 cursor-grab active:cursor-grabbing touch-pan-y"
+      className="absolute inset-0 cursor-grab touch-pan-y select-none will-change-transform active:cursor-grabbing [transform:translateZ(0)]"
       style={{ x, rotate, opacity }}
       drag={isTop ? 'x' : false}
+      dragDirectionLock
       dragConstraints={{ left: 0, right: 0 }}
-      dragElastic={0.7}
+      dragElastic={0.55}
       dragMomentum={false}
+      dragTransition={{ bounceStiffness: 500, bounceDamping: 28 }}
       onDragEnd={handleDragEnd}
-      initial={{ scale: 0.95, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      exit={{ x: x.get() > 0 ? 300 : -300, opacity: 0, transition: { duration: 0.3 } }}
+      initial={{ scale: 0.94, y: 24, opacity: 0 }}
+      animate={{ scale: 1, y: 0, opacity: 1 }}
+      transition={{ type: 'spring', stiffness: 260, damping: 24 }}
+      exit={{ x: x.get() > 0 ? 320 : -320, rotate: x.get() > 0 ? 8 : -8, opacity: 0, transition: { duration: 0.28, ease: 'easeIn' } }}
     >
+      <motion.div style={{ scale: cardScale }} className="h-full">
       <div className={`relative h-full rounded-3xl overflow-hidden border border-neutrals-800/80 bg-neutrals-900 bg-gradient-to-br ${project.gradient}`}>
-        {/* Cover photo */}
+        {/* Cover photo with drag parallax */}
         {project.image && (
           <div className="absolute top-0 left-0 right-0 h-48 overflow-hidden">
-            <Image
-              src={project.image}
-              alt={`${project.title} preview`}
-              fill
-              sizes="(max-width: 640px) 90vw, 400px"
-              className="object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutrals-900" />
+            <motion.div style={{ x: imgX }} className="absolute inset-0">
+              <Image
+                src={project.image}
+                alt={`${project.title} preview`}
+                fill
+                draggable={false}
+                sizes="(max-width: 640px) 90vw, 400px"
+                className="object-cover object-center scale-[1.12]"
+              />
+            </motion.div>
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutrals-900" />
           </div>
         )}
         {/* Glassmorphism overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutrals-950/95" />
-        
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutrals-950/95" />
+        {/* Drag glare */}
+        <motion.div
+          aria-hidden="true"
+          style={{ opacity: glareOpacity }}
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-white/10"
+        />
+
         {/* Dot pattern */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
+        <div className="pointer-events-none absolute inset-0 opacity-[0.03]" style={{
           backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
           backgroundSize: '24px 24px'
         }} />
 
         {/* Icon */}
         <motion.div 
-          className={`absolute left-1/2 -translate-x-1/2 w-20 h-20 rounded-2xl bg-neutrals-800/80 backdrop-blur flex items-center justify-center border border-neutrals-700/30 ${project.image ? 'top-36' : 'top-8'}`}
+          className={`absolute left-1/2 -translate-x-1/2 w-20 h-20 rounded-2xl bg-neutrals-800 border border-neutrals-700/40 shadow-[0_10px_30px_-8px_rgba(0,0,0,0.7)] flex items-center justify-center ${project.image ? 'top-36' : 'top-8'}`}
           aria-hidden="true"
           animate={shouldReduceMotion ? undefined : { y: [0, -8, 0] }}
           transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
@@ -303,6 +321,7 @@ function SwipeCard({
           </>
         )}
       </div>
+      </motion.div>
     </motion.div>
   );
 }

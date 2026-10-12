@@ -71,28 +71,54 @@ const AboutSkills = () => {
   const [isUserScrolling, setIsUserScrolling] = useState(false);
   const [typingComplete, setTypingComplete] = useState(false);
 
-  const terminalContent = 
-`lokesh@portfolio/root:~$ bash /.lokesh
+  const terminalContent =
+`lokesh@portfolio:~$ ./whoami --full
 
-Processing... 
-Compiling sources...
-Installing necessary packages...
-Fetching profile...
+┌─ LOKESH.PORTFOLIO ───────────────────────────┐
+│  status: open_to_work = true                 │
+│  based: Chennai, IN                          │
+└──────────────────────────────────────────────┘
 
-Initializing Lokesh Portfolio...
+> M. Lokesh — software developer & freelancer.
+> I turn client ideas into real websites and apps,
+> from first concept to final delivery.
 
-Hey there! I'm Lokesh, a software developer from Chennai with a strong interest in technology, coding, web development, application development, AI, and UI/UX design.
+lokesh@portfolio:~$ ls ./stack
+  C · Python · JavaScript · HTML/CSS · Node.js
+  REST APIs · MySQL · Supabase · Git & GitHub
+  Figma · Photoshop · Postman · VS Code
+  + Tally & Zoho Books — business fluency included
 
-I work as a freelancer, developing websites and applications based on client and business requirements. I understand client ideas, turn them into practical digital solutions, communicate throughout the process, implement feedback, and independently take projects from concept to completion.
+lokesh@portfolio:~$ ./mode
+● ships_complete = true
+● feedback_driven = true
+● always_learning = true
 
-My stack: C, Python, JavaScript, HTML/CSS, Node.js, REST APIs, MySQL, Supabase, Git/GitHub, VS Code, Postman, Figma, Photoshop. I also know Tally and Zoho Books, giving me real understanding of accounting, finance and business processes.
+lokesh@portfolio:~$ echo $INVITE
+> Have an idea? Let's build it together.
 
-I'm continuously learning, improving my technical skills, exploring new technologies, and building practical projects that combine technology, creativity, and real-world problem solving. Ready to build something amazing together?
-
-lokesh@portfolio/root:~$ _
+lokesh@portfolio:~$
 `;
 
-  const typingSpeed = 25;
+  // Color each terminal line by its shape (prompt / quote / status / frame).
+  const renderTerminalLine = (line: string, key: number) => {
+    let cls = '';
+    if (line.startsWith('lokesh@')) cls = 'text-cyan-300 font-bold';
+    else if (line.startsWith('>')) cls = 'text-white';
+    else if (line.startsWith('●')) cls = 'text-emerald-300';
+    else if (line.startsWith('┌') || line.startsWith('└') || line.startsWith('│')) cls = 'text-white/50';
+    else if (/^\s{2}\S/.test(line)) cls = 'text-amber-200';
+    return (
+      <div key={key} className={cls}>
+        {line === '' ? ' ' : line}
+      </div>
+    );
+  };
+
+  const typingInterval = 14;
+  const charsPerTick = 3;
+
+  const skipTyping = () => setDisplayedText(terminalContent);
 
   useEffect(() => {
     const currentRef = terminalBodyRef.current;
@@ -120,12 +146,11 @@ lokesh@portfolio/root:~$ _
     }
 
     const timeoutId = setTimeout(() => {
-      const nextChar = terminalContent.charAt(displayedText.length);
-      setDisplayedText(prev => prev + nextChar);
-    }, typingSpeed);
+      setDisplayedText((prev) => prev + terminalContent.slice(prev.length, prev.length + charsPerTick));
+    }, typingInterval);
 
     return () => clearTimeout(timeoutId);
-  }, [startTyping, displayedText, terminalContent, typingSpeed, isTypingComplete]);
+  }, [startTyping, displayedText, terminalContent, typingInterval, isTypingComplete]);
 
   // Update typingComplete when typing finishes
   useEffect(() => {
@@ -212,6 +237,14 @@ lokesh@portfolio/root:~$ _
             <span className="h-3 w-3 bg-[#ffbd2e] rounded-full"></span>
             <span className="h-3 w-3 bg-[#27ca3f] rounded-full"></span>
             <span className="ml-4 text-xs text-neutrals-400 font-mono">lokesh@portfolio ~ terminal</span>
+            {startTyping && !isTypingComplete && (
+              <button
+                onClick={skipTyping}
+                className="ml-auto text-[11px] font-mono px-3 py-1.5 min-h-9 rounded-lg border border-[#30363d] text-neutrals-400 hover:text-white hover:border-neutrals-500 transition-colors"
+              >
+                skip ▸▸
+              </button>
+            )}
           </div>
           {/* Terminal body - with custom scrollbar */}
           <div
@@ -219,7 +252,28 @@ lokesh@portfolio/root:~$ _
             onScroll={handleScroll}
             className="p-6 text-[#39FF14] font-jetbrains text-xs sm:text-sm md:text-base h-[300px] sm:h-[400px] md:h-[450px] overflow-y-auto whitespace-pre-wrap leading-relaxed terminal-scrollbar"
           >
-            <pre className="whitespace-pre-wrap">{displayedText}</pre>
+            {displayedText.split('\n').map((line, i) => renderTerminalLine(line, i))}
+            <span aria-hidden="true" className="inline-block w-2.5 h-[1.1em] align-middle bg-[#39FF14] animate-pulse" />
+            {typingComplete && (
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mt-5 flex flex-wrap gap-3"
+              >
+                <a
+                  href="/pro#work"
+                  className="px-5 py-2.5 min-h-11 inline-flex items-center rounded-xl bg-[#39FF14]/15 border border-[#39FF14]/40 text-[#39FF14] text-sm font-mono font-bold hover:bg-[#39FF14]/25 transition-colors"
+                >
+                  ./view-work →
+                </a>
+                <a
+                  href="/pro#contact"
+                  className="px-5 py-2.5 min-h-11 inline-flex items-center rounded-xl bg-white/5 border border-white/15 text-white text-sm font-mono hover:bg-white/10 transition-colors"
+                >
+                  ./say-hello
+                </a>
+              </motion.div>
+            )}
           </div>
         </div>
       </motion.div>

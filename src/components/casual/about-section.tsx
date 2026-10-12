@@ -76,7 +76,7 @@ export function AboutSection() {
                 className="block text-5xl md:text-7xl lg:text-[5.5rem] font-black text-[#1a1a2e] leading-[1.05]"
                 style={{ fontFamily: "'Mosk', sans-serif" }}
               >
-                I&apos;m Riyaz.
+                I&apos;m Lokesh.
               </span>
             </Reveal>
             <Reveal delay={0.2}>
@@ -100,8 +100,8 @@ export function AboutSection() {
 
           <Reveal delay={0.4}>
             <p className="text-xl md:text-2xl text-[#555] max-w-2xl leading-relaxed">
-              A first-year Mechanical Engineering student at BSA Crescent Institute of Science &amp; Technology, 
-              running on curiosity and caffeine.
+              A Software Developer, Web Developer and Freelancer from Chennai, running on
+              curiosity, creativity and clean code.
             </p>
           </Reveal>
 
@@ -110,9 +110,9 @@ export function AboutSection() {
             <div className="flex flex-wrap gap-4 mt-12">
               {[
                 { label: 'Developer', icon: Code2 },
-                { label: 'Athlete', icon: Dumbbell },
-                { label: 'Creator', icon: Camera },
-                { label: 'Entrepreneur', icon: Zap },
+                { label: 'Designer', icon: Camera },
+                { label: 'Freelancer', icon: Zap },
+                { label: 'Creator', icon: Sparkles },
               ].map(({ label, icon: Icon }) => (
                 <span 
                   key={label}
@@ -133,33 +133,58 @@ export function AboutSection() {
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
             {/* Image Side */}
             <Reveal className="relative">
-              <div className="relative -mt-16 md:-mt-44">
-                {/* Decorative frame */}
-                <div className="absolute -inset-4 md:-inset-6 border-2 border-[#d4af37]/30 -rotate-3" />
-                <div className="absolute -inset-4 md:-inset-6 border-2 border-[#1a1a2e]/10 rotate-2" />
-                
-                {/* Main image container */}
-                <div className="relative aspect-[3/4] overflow-hidden bg-[#1a1a2e]">
-                  <Image
-                    src="/images/riyaz-profile.jpg"
-                    alt="Riyaz - Developer, Athlete, Creator"
-                    fill
-                    className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e]/40 via-transparent to-transparent" />
+              <div className="relative flex items-center justify-center py-10">
+                {/* Soft glow */}
+                <div className="absolute h-64 w-64 rounded-full bg-[#d4af37]/25 blur-[90px]" />
+
+                {/* Circular portrait with effects */}
+                <div className="group relative h-64 w-64 sm:h-80 sm:w-80 lg:h-[340px] lg:w-[340px]">
+                  {/* Rotating dashed orbit ring */}
+                  <motion.svg
+                    aria-hidden="true"
+                    viewBox="0 0 100 100"
+                    className="absolute -inset-5 animate-[spin_22s_linear_infinite]"
+                  >
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="48"
+                      fill="none"
+                      stroke="#d4af37"
+                      strokeWidth="1.2"
+                      strokeDasharray="4 5"
+                      strokeLinecap="round"
+                      opacity="0.8"
+                    />
+                  </motion.svg>
+                  {/* Rotating conic sheen ring */}
+                  <div className="absolute -inset-2.5 animate-[spin_12s_linear_infinite_reverse] rounded-full bg-[conic-gradient(from_0deg,#d4af37,transparent_30%,#1a1a2e_50%,transparent_70%,#d4af37)]" />
+
+                  {/* Photo */}
+                  <div className="absolute inset-0 overflow-hidden rounded-full bg-[#1a1a2e] shadow-[0_20px_60px_-15px_rgba(212,175,55,0.45)] ring-2 ring-white/60">
+                    <Image
+                      src="/images/lokesh-profile-v2.jpg"
+                      alt="M. Lokesh - Software Developer"
+                      fill
+                      quality={90}
+                      className="object-cover object-[center_12%] grayscale group-hover:grayscale-0 transition-all duration-700"
+                      sizes="(max-width: 768px) 80vw, 340px"
+                    />
+                  </div>
+
+                  {/* Sparkle accents */}
+                  <span className="absolute -top-1 left-10 h-2.5 w-2.5 animate-pulse rounded-full bg-[#d4af37] shadow-[0_0_12px_2px_rgba(212,175,55,0.8)]" />
+                  <span className="absolute bottom-8 -right-1 h-2 w-2 animate-pulse rounded-full bg-[#1a1a2e]" />
                 </div>
-                
+
                 {/* Floating badge */}
-                <motion.div 
-                  className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-[#d4af37] text-[#1a1a2e] px-6 py-3 font-bold"
+                <motion.div
+                  className="absolute bottom-2 right-2 md:right-6 bg-[#d4af37] text-[#1a1a2e] px-6 py-3 font-bold shadow-lg"
                   initial={{ rotate: -5 }}
                   whileHover={{ rotate: 0, scale: 1.05 }}
                   style={{ fontFamily: "'Mosk', sans-serif" }}
                 >
-                  Class of &apos;26
+                  Class of &apos;25
                 </motion.div>
               </div>
             </Reveal>
@@ -183,15 +208,16 @@ export function AboutSection() {
               
               <Reveal delay={0.2}>
                 <p className="text-lg md:text-xl text-[#555] leading-relaxed mb-6">
-                  That&apos;s me — probably thinking about my next project, 
-                  or what to cook for dinner, or how clouds work.
+                  That&apos;s me — probably thinking about my next website, a new app idea,
+                  or how to make a UI cleaner and faster.
                 </p>
               </Reveal>
               
               <Reveal delay={0.3}>
                 <p className="text-lg md:text-xl text-[#555] leading-relaxed mb-8">
-                  An 18-year-old from Chennai who codes, lifts, and questions everything. 
-                  This portfolio is my digital home — raw, real, and always evolving.
+                  A developer from Chennai who codes, designs, and freelances. I understand client
+                  ideas and turn them into practical digital solutions — from first concept to
+                  final delivery.
                 </p>
               </Reveal>
               
@@ -228,34 +254,34 @@ export function AboutSection() {
           <div className="grid md:grid-cols-2 gap-x-16 gap-y-16">
             {[
               { 
-                icon: Cloud, 
-                title: 'Cloud & Infrastructure',
-                desc: 'AWS, Azure, GCP, Linux, Docker. Built Ryzen Clouds — my own hosting company. From physical servers to cloud architecture.'
+                icon: Code2, 
+                title: 'Web Development',
+                desc: 'HTML, CSS, JavaScript, responsive websites. Building modern, fast, client-ready sites from idea to deployment.'
               },
               { 
                 icon: Dumbbell, 
-                title: 'Fitness Science',
-                desc: 'Training, nutrition, and recovery as a discipline. I track what I lift, what I eat, and how I progress — consistency over intensity.'
+                title: 'Application Development',
+                desc: 'Python, Java (learning), basic application development. Practical apps that solve real business problems.'
               },
               { 
-                icon: Code2, 
-                title: 'Development',
-                desc: 'Full-stack development. Hardware, firmware, networking. Understanding systems from the ground up.'
+                icon: Cloud, 
+                title: 'UI/UX Design',
+                desc: 'Figma, UI design, responsive layouts, Photoshop and photo editing. Clean interfaces users actually enjoy.'
               },
               { 
                 icon: Camera, 
-                title: 'Creative Work',
-                desc: 'Photography, cinematography, video editing. The visual side of my brain that never stops creating.'
+                title: 'Tools & Workflow',
+                desc: 'Git, GitHub, VS Code, Postman, AI-assisted tools. Independent end-to-end delivery with clear communication.'
               },
               { 
                 icon: ChefHat, 
-                title: 'Cooking',
-                desc: 'Nutrition-focused experiments. Making food that actually tastes good while hitting macros.'
+                title: 'Accounting & Finance',
+                desc: 'Tally, Zoho Books, basic accounting knowledge. Understanding business processes, finance and real client needs.'
               },
               { 
                 icon: Sparkles, 
                 title: 'Always Learning',
-                desc: 'Singing, dancing, new technologies. My brain sees everything as a skill tree to unlock.'
+                desc: 'C, Node.js, REST APIs, MySQL, Supabase. Continuously improving, exploring new tech and building practical projects.'
               },
             ].map(({ icon: Icon, title, desc }, index) => (
               <Reveal key={title} delay={index * 0.1}>
@@ -295,28 +321,28 @@ export function AboutSection() {
             {[
               { 
                 phase: '01',
-                title: 'The Tinkerer',
-                text: 'Started by breaking things apart to see how they worked. Modified games, wrote scripts, learned that everything is hackable if you\'re curious enough.'
+                title: 'The Start',
+                text: 'Started with Computer Science in Higher Secondary at St. Joseph Higher Secondary School, Kovalam (2023-2025). Learned how the web works and broke things to understand them.'
               },
               { 
                 phase: '02',
-                title: 'The Deep Dive',
-                text: 'Went from scripts to real programming. Lua, then Python, then everything else. Each language opened a new door.'
+                title: 'Freelance Developer',
+                text: 'Since 2023, developing websites and applications based on client and business requirements. Learned to plan, build interfaces, test features and implement revisions.'
               },
               { 
                 phase: '03',
                 title: 'Building Real Things',
-                text: 'Started Ryzen Clouds. Handled real clients, set up real servers, solved real problems at 2 AM. Made mistakes that taught me more than any textbook.'
+                text: 'Projects like Kadal Thunai modular e-commerce platform, reusable portfolio system, and B2B Trading Platform. Real clients, real feedback, real delivery from idea to completion.'
               },
               { 
                 phase: '04',
-                title: 'The Gym Became a Classroom',
-                text: 'Fitness hit different. Heavy sets, partials, stretch-focused movements. Recovery was bad, nutrition inconsistent, but I studied the process like my life depended on it.'
+                title: 'Design + Business',
+                text: 'Added UI/UX with Figma, Photoshop and photo editing. Added Tally and Zoho Books for accounting and finance understanding — tech plus business processes.'
               },
               { 
                 phase: '05',
                 title: 'Now',
-                text: 'All of it merged. Tech, fitness, creativity — not separate paths, but one evolving identity. Still learning. Still breaking things. Still curious.'
+                text: 'B.Com at Hindustan Institute of Technology and Science (HITS), Chennai, continuing through online study. Still freelancing, still learning C, Python, JavaScript, AI tools — and building.'
               },
             ].map(({ phase, title, text }, index) => (
               <Reveal key={phase} delay={index * 0.1}>
@@ -353,31 +379,31 @@ export function AboutSection() {
           <div className="space-y-6 text-lg md:text-xl text-[#555] leading-relaxed">
             <Reveal delay={0.1}>
               <p>
-                I&apos;m Riyaz Akthar, a first-year Mechanical Engineering student who somehow ended up spending a lot of my free time building software.
+                I&apos;m M. Lokesh, a software developer with a strong interest in technology, coding, web development, application development, AI, and UI/UX design.
               </p>
             </Reveal>
 
             <Reveal delay={0.15}>
               <p>
-                I&apos;m naturally curious and like understanding how things work — whether that&apos;s a mechanical system, a Linux server, an AI model, or a piece of software running in production. I enjoy taking things apart, experimenting with them, and occasionally breaking them badly enough that I have to learn how to fix them.
+                I have experience working as a freelancer, developing websites and applications based on client and business requirements. I understand client ideas, turn them into practical digital solutions, communicate throughout the development process, implement feedback, and independently take projects from initial concept to completion.
               </p>
             </Reveal>
 
             <Reveal delay={0.2}>
               <p>
-                Outside academics and development, I spend time training at the gym, exploring technology, experimenting with AI tools and infrastructure, and learning things simply because they interest me.
+                I have worked with technologies such as C, Python, JavaScript, Git/GitHub, web technologies, and AI tools, along with skills in UI/UX design, web design, Photoshop, and photo editing. I also have knowledge of Tally and Zoho Books, giving me an additional understanding of accounting, finance, and business processes.
               </p>
             </Reveal>
 
             <Reveal delay={0.25}>
               <p>
-                I&apos;m especially interested in cloud computing, distributed systems, developer tools, AI, virtualization, and building products from scratch. I also enjoy turning ideas into real, working projects rather than leaving them as concepts.
+                Education: Hindustan Institute of Technology and Science (HITS), Chennai — B.Com 2025-Present, and St. Joseph Higher Secondary School, Kovalam — Computer Science 2023-2025. Based in Chennai, Tamil Nadu, India.
               </p>
             </Reveal>
 
             <Reveal delay={0.3}>
               <p>
-                I&apos;m still early in my journey, but that&apos;s probably what I enjoy most about it — there&apos;s a lot left to build, break, learn, and discover.
+                I&apos;m continuously learning, improving my technical skills, exploring new technologies, and building practical projects that combine technology, creativity, and real-world problem solving.
               </p>
             </Reveal>
           </div>
@@ -484,20 +510,18 @@ export function CasualFooter() {
         <div className="py-8 px-6 md:px-12">
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} Riyaz
+              © {new Date().getFullYear()} Lokesh
             </p>
             
             <div className="flex items-center gap-6 text-sm text-gray-500">
               <a 
-                href="https://instagram.com/ryzenvfx" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="mailto:mr.lokesh7@gmail.com" 
                 className="hover:text-[#d4af37] transition-colors"
               >
-                Instagram
+                Email
               </a>
               <a 
-                href="https://github.com/ryzenate1"
+                href="https://github.com/lokesh12dev"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-[#d4af37] transition-colors"
@@ -505,12 +529,10 @@ export function CasualFooter() {
                 GitHub
               </a>
               <a 
-                href="https://www.linkedin.com/in/riyazakthar"
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="tel:+917603883879"
                 className="hover:text-[#d4af37] transition-colors"
               >
-                LinkedIn
+                Phone
               </a>
             </div>
           </div>

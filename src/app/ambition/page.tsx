@@ -2,7 +2,7 @@ import AmbitionSection from '@/components/sections/ambition';
 import { type Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Childhood Dreams - RYZEN STUDIO',
+  title: 'Childhood Dreams - LOKESH',
 };
 
 export default function AmbitionPage() {

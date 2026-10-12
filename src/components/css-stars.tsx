@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { memo, useMemo } from 'react';
+import { memo, useEffect, useMemo, useState } from 'react';
 
 interface CSSStarsProps {
   className?: string;
@@ -23,7 +23,16 @@ export const CSSStars = memo(function CSSStars({
   count = 150,
   opacity = 0.8
 }: CSSStarsProps) {
-  // Generate star positions once using seeded random (SSR-consistent)
+  // Render only after mount: Math.sin floating-point serialization can differ
+  // between the server and client JS engines, causing hydration mismatches.
+  // Stars are decorative (aria-hidden), so deferring them costs nothing.
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional post-mount gate
+    setIsMounted(true);
+  }, []);
+
+  // Generate star positions once using seeded random (deterministic per engine)
   const stars = useMemo(() => {
     return Array.from({ length: count }, (_, i) => ({
       id: i,
@@ -33,6 +42,18 @@ export const CSSStars = memo(function CSSStars({
       opacity: seededRandom(i * 13 + 3) * opacity,
     }));
   }, [count, opacity]);
+
+  if (!isMounted) {
+    return (
+      <div
+        className={cn(
+          'absolute inset-0 overflow-hidden pointer-events-none -z-10',
+          className
+        )}
+        aria-hidden="true"
+      />
+    );
+  }
 
   return (
     <div 

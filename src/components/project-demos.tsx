@@ -34,7 +34,7 @@ export function KadalHeroDemo() {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: 'url(/images/kadal-bg.jpg)',
+          backgroundImage: 'url(/images/kadal-bg-v2.jpg)',
         }}
       >
         {/* Dark overlay */}

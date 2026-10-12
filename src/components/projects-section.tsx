@@ -10,32 +10,32 @@ const projects = [
   {
     title: "Caroline Seiffert",
     imageUrl: "/project_1.png",
-    link: "https://www.ryzenstudio.com/project/carolineseiffert",
+    link: "https://www.lokesh.studio/project/carolineseiffert",
   },
   {
     title: "Little Ashé",
     imageUrl: "/project_2.png",
-    link: "https://www.ryzenstudio.com/project/little-ashe",
+    link: "https://www.lokesh.studio/project/little-ashe",
   },
   {
     title: "Contentary",
     imageUrl: "/project_3.png",
-    link: "https://www.ryzenstudio.com/project/contentary",
+    link: "https://www.lokesh.studio/project/contentary",
   },
   {
     title: "Nullpunkt",
     imageUrl: "/project_4.png",
-    link: "https://www.ryzenstudio.com/project/nullpunkt",
+    link: "https://www.lokesh.studio/project/nullpunkt",
   },
   {
     title: "Weatherworks",
-    imageUrl: "https://www.ryzenstudio.com/_next/image?url=%2Fassets%2Fweatherworks.webp&w=1920&q=75",
-    link: "https://www.ryzenstudio.com/project/weatherworks",
+    imageUrl: "https://www.lokesh.studio/_next/image?url=%2Fassets%2Fweatherworks.webp&w=1920&q=75",
+    link: "https://www.lokesh.studio/project/weatherworks",
   },
   {
     title: "Lockey",
-    imageUrl: "https://www.ryzenstudio.com/_next/image?url=%2Fassets%2Flockey.webp&w=1920&q=75",
-    link: "https://www.ryzenstudio.com/project/lockey",
+    imageUrl: "https://www.lokesh.studio/_next/image?url=%2Fassets%2Flockey.webp&w=1920&q=75",
+    link: "https://www.lokesh.studio/project/lockey",
   },
 ];
 
@@ -61,7 +61,7 @@ const ProjectsSection = () => {
       <SectionTitle 
         label="PROJECTS"
         title="Work Showcase"
-        subtitle="Check out our sample work with Ryzen Studio"
+        subtitle="Check out sample work with Lokesh"
       />
 
       <button

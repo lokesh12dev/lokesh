@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, MessageCircle, Instagram, Send } from 'lucide-react';
+import { Mail, MessageCircle, Send } from 'lucide-react';
 import { useState } from 'react';
 
 const fadeInUp = {
@@ -18,21 +18,21 @@ const contactMethods = [
     icon: MessageCircle,
     name: 'WhatsApp',
     value: 'Chat with me',
-    href: 'https://wa.me/917200672127',
+    href: 'https://wa.me/917603883879',
     color: 'hover:bg-green-50',
   },
   {
-    icon: Instagram,
-    name: 'Instagram',
-    value: '@ryzenvfx',
-    href: 'https://instagram.com/ryzenvfx',
+    icon: MessageCircle,
+    name: 'Phone',
+    value: '7603883879',
+    href: 'tel:+917603883879',
     color: 'hover:bg-pink-50',
   },
   {
     icon: Mail,
     name: 'Email',
-    value: 'riyazakthar46@gmail.com',
-    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=riyazakthar46@gmail.com',
+    value: 'mr.lokesh7@gmail.com',
+    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=mr.lokesh7@gmail.com',
     color: 'hover:bg-blue-50',
   },
 ];

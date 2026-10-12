@@ -1,18 +1,18 @@
-# RYZEN STUDIO
+# LOKESH
 
 <p align="center">
-  <strong>🚀 Web Development and Design Studio from the Future</strong>
+  <strong>🚀 Software Development Portfolio by M. Lokesh</strong>
 </p>
 
 <p align="center">
-  © 2025 RYZEN STUDIO - Built by Riyaz
+  © 2026 LOKESH - Built by M. Lokesh
 </p>
 
 ---
 
 ## About
 
-RYZEN STUDIO is a modern portfolio website showcasing creative web development and design projects. Built with cutting-edge technologies and featuring interactive elements, mini-games, and stunning animations.
+LOKESH is a modern portfolio website for M. Lokesh — Software Developer, Web Developer & Freelancer from Chennai. Showcasing websites, applications, UI/UX work and client projects.
 
 ## Features
 
@@ -60,4 +60,4 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 
 ---
 
-<p align="center">Made with ❤️ by Riyaz</p>
+<p align="center">Made with ❤️ by M. Lokesh</p>

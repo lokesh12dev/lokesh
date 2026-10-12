@@ -186,10 +186,7 @@ export function CasualHeader() {
                   className="text-[#404040] hover:opacity-80 transition-opacity flex items-baseline gap-1"
                 >
                   <span className="font-bold text-lg md:text-xl tracking-wider font-mono uppercase">
-                    RYZEN
-                  </span>
-                  <span className="font-mono text-lg md:text-xl tracking-wider uppercase">
-                    STUDIO
+                    LOKESH
                   </span>
                 </Link>
               </div>

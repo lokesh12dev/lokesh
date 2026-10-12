@@ -23,16 +23,16 @@ export async function generateMetadata({
   const title = projectTitles[slug] ?? 'Project Showcase';
 
   return {
-    title: `${title} | RYZEN STUDIO`,
-    description: `${title} - a featured project by Riyaz at RYZEN STUDIO.`,
+    title: `${title} | LOKESH`,
+    description: `${title} - a featured project by Lokesh at LOKESH.`,
     alternates: {
-      canonical: `https://ryzenstudio.com/showcase/${slug}`,
+      canonical: `https://lokesh.studio/showcase/${slug}`,
     },
     openGraph: {
-      title: `${title} | RYZEN STUDIO`,
-      description: `${title} - a featured project by Riyaz at RYZEN STUDIO.`,
-      url: `https://ryzenstudio.com/showcase/${slug}`,
-      siteName: 'RYZEN STUDIO',
+      title: `${title} | LOKESH`,
+      description: `${title} - a featured project by Lokesh at LOKESH.`,
+      url: `https://lokesh.studio/showcase/${slug}`,
+      siteName: 'LOKESH',
       type: 'website',
     },
   };

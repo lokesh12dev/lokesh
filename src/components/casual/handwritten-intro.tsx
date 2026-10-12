@@ -50,7 +50,7 @@ export function HandwrittenIntro() {
             fontWeight: 700,
           }}
         >
-          Hi, I&apos;m <span style={{ color: '#404040', fontWeight: 700 }}>Riyaz</span>
+          Hi, I&apos;m <span style={{ color: '#404040', fontWeight: 700 }}>Lokesh</span>
         </span>
         
         {/* Handwritten SVG underline */}
@@ -97,7 +97,7 @@ export function HandwrittenIntroStyled() {
             fontWeight: 700,
           }}
         >
-          Hi, I&apos;m <span style={{ color: '#404040', fontWeight: 700 }}>Riyaz</span>
+          Hi, I&apos;m <span style={{ color: '#404040', fontWeight: 700 }}>Lokesh</span>
         </span>
         
         {/* Handwritten SVG underline that draws in */}
@@ -122,7 +122,7 @@ export function HandwrittenIntroStyled() {
         </motion.svg>
       </div>
 
-      {/* Waving hand with animation - after Riyaz (decorative) */}
+      {/* Waving hand with animation - after Lokesh (decorative) */}
       <motion.span
         aria-hidden="true"
         className="text-4xl sm:text-5xl inline-block"

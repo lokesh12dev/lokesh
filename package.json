@@ -1,8 +1,8 @@
 {
-  "name": "ryzen-studio",
+  "name": "lokesh",
   "version": "1.0.0",
-  "description": "RYZEN STUDIO - Web Development and Design Portfolio by Riyaz",
-  "author": "Riyaz",
+  "description": "LOKESH - Software Development and Design Portfolio by M. Lokesh",
+  "author": "M. Lokesh",
   "private": true,
   "scripts": {
     "dev": "next dev",

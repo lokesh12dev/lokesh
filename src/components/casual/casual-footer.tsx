@@ -8,11 +8,11 @@ export function CasualFooter() {
       <div className="casual-container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/60 text-sm">
-            © {new Date().getFullYear()} Riyaz. Made with ☕ and code.
+            © {new Date().getFullYear()} Lokesh. Made with ☕ and code.
           </p>
           <div className="flex items-center gap-6">
             <Link 
-              href="https://github.com/ryzenate1" 
+              href="https://github.com/lokesh12dev" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-white text-sm transition-colors"
@@ -20,12 +20,10 @@ export function CasualFooter() {
               github
             </Link>
             <Link 
-              href="https://www.linkedin.com/in/riyazakthar" 
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:mr.lokesh7@gmail.com" 
               className="text-white/60 hover:text-white text-sm transition-colors"
             >
-              linkedin
+              email
             </Link>
             <Link 
               href="/pro" 

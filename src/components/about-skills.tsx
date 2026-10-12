@@ -72,26 +72,24 @@ const AboutSkills = () => {
   const [typingComplete, setTypingComplete] = useState(false);
 
   const terminalContent = 
-`riyaz@portfolio/root:~$ bash /.riyaz
+`lokesh@portfolio/root:~$ bash /.lokesh
 
 Processing... 
 Compiling sources...
 Installing necessary packages...
 Fetching profile...
 
-Initializing Riyaz Portfolio...
+Initializing Lokesh Portfolio...
 
-Hey there! I'm an 18-year-old passionate coder who's absolutely obsessed with exploring new things and questioning everything around me. Why? Because that's how you truly learn!
+Hey there! I'm Lokesh, a software developer from Chennai with a strong interest in technology, coding, web development, application development, AI, and UI/UX design.
 
-"Jack of all trades, master of none" - that's my motto and I wear it proudly. I dive deep into Android development, web development, cloud architecture, system administration, networking, nutrition, server management, PC building, content creation, teaching, and inventing new stuff. 
+I work as a freelancer, developing websites and applications based on client and business requirements. I understand client ideas, turn them into practical digital solutions, communicate throughout the process, implement feedback, and independently take projects from concept to completion.
 
-I'm a free learner - I learn what I want to learn, do what I love, and I'm genuinely good at what I do. Haven't mastered everything yet, but that's the beauty of the journey, right?
+My stack: C, Python, JavaScript, HTML/CSS, Node.js, REST APIs, MySQL, Supabase, Git/GitHub, VS Code, Postman, Figma, Photoshop. I also know Tally and Zoho Books, giving me real understanding of accounting, finance and business processes.
 
-Currently rocking as a Full-Stack Web Developer, and when I'm not coding, you'll find me chatting with ChatGPT (yes, I love ragebaiting LLMs - it's an art form), hitting the gym as a fitness hobbyist, or diving into the latest tech that caught my curiosity.
+I'm continuously learning, improving my technical skills, exploring new technologies, and building practical projects that combine technology, creativity, and real-world problem solving. Ready to build something amazing together?
 
-I'm passionate about everything I touch, always questioning "why" and "how can this be better?" Ready to build something amazing together?
-
-riyaz@portfolio/root:~$ _
+lokesh@portfolio/root:~$ _
 `;
 
   const typingSpeed = 25;
@@ -213,7 +211,7 @@ riyaz@portfolio/root:~$ _
             <span className="h-3 w-3 bg-[#ff5f56] rounded-full"></span>
             <span className="h-3 w-3 bg-[#ffbd2e] rounded-full"></span>
             <span className="h-3 w-3 bg-[#27ca3f] rounded-full"></span>
-            <span className="ml-4 text-xs text-neutrals-400 font-mono">riyaz@portfolio ~ terminal</span>
+            <span className="ml-4 text-xs text-neutrals-400 font-mono">lokesh@portfolio ~ terminal</span>
           </div>
           {/* Terminal body - with custom scrollbar */}
           <div

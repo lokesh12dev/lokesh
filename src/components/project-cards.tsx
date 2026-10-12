@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import { motion, useMotionValue, useTransform, AnimatePresence, useReducedMotion, type PanInfo } from 'framer-motion';
 import { Fish, Bus, Ticket, ArrowRight, LucideIcon, X } from 'lucide-react';
 
@@ -23,6 +24,7 @@ interface Project {
   description: string;
   longDescription: string;
   icon: LucideIcon;
+  image?: string;
   gradient: string;
   accentColor: string;
   techStack: string[];
@@ -45,6 +47,7 @@ const projects: Project[] = [
     description: 'Fresh seafood delivery platform with Tamil language support and weight-based pricing.',
     longDescription: 'A premium fresh seafood e-commerce platform built for the Indian market (Tamil Nadu). Features bilingual Tamil/English support, GSAP-powered animations, weight-based dynamic pricing, Swiggy-style cart experience, and real-time order tracking with confetti celebrations.',
     icon: Fish,
+    image: '/images/kadal-bg-v2.jpg',
     gradient: 'from-rose-500/20 via-amber-500/10 to-rose-500/20',
     accentColor: '#bd2d3c',
     techStack: ['Next.js 15', 'React 19', 'GSAP', 'Framer Motion', 'Supabase', 'Prisma', 'Tailwind'],
@@ -89,6 +92,7 @@ const projects: Project[] = [
     description: 'Real-time bus tracking with voice commands and IoT simulation for Smart India Hackathon.',
     longDescription: 'Smart India Hackathon 2025 project — A comprehensive public transport tracking system with multi-language voice recognition (English, Hindi, Tamil, Telugu), real-time WebSocket updates, IoT device simulation, and offline-first PWA architecture.',
     icon: Bus,
+    image: '/images/busbuddy-bg.jpg',
     gradient: 'from-rose-500/20 via-pink-500/10 to-rose-500/20',
     accentColor: '#E83E59',
     techStack: ['Next.js 14', 'Socket.IO', 'Leaflet Maps', 'Web Speech API', 'Zustand', 'Supabase Realtime'],
@@ -133,6 +137,7 @@ const projects: Project[] = [
     description: 'Full-stack ticket booking with interactive seat selection and glassmorphism UI.',
     longDescription: 'A complete bus ticket booking platform (Redbus clone) featuring interactive seat map selection, glassmorphism design system, multi-step booking flow, advanced filtering, and a Spring Boot backend with PostgreSQL.',
     icon: Ticket,
+    image: '/images/saira-bg.jpg',
     gradient: 'from-orange-500/20 via-red-500/10 to-orange-500/20',
     accentColor: '#e11d48',
     techStack: ['Next.js 15', 'Spring Boot', 'Clerk Auth', 'Framer Motion', 'Radix UI', 'PostgreSQL'],
@@ -217,6 +222,19 @@ function SwipeCard({
       exit={{ x: x.get() > 0 ? 300 : -300, opacity: 0, transition: { duration: 0.3 } }}
     >
       <div className={`relative h-full rounded-3xl overflow-hidden border border-neutrals-800/80 bg-neutrals-900 bg-gradient-to-br ${project.gradient}`}>
+        {/* Cover photo */}
+        {project.image && (
+          <div className="absolute top-0 left-0 right-0 h-48 overflow-hidden">
+            <Image
+              src={project.image}
+              alt={`${project.title} preview`}
+              fill
+              sizes="(max-width: 640px) 90vw, 400px"
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutrals-900" />
+          </div>
+        )}
         {/* Glassmorphism overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutrals-950/95" />
         
@@ -228,7 +246,7 @@ function SwipeCard({
 
         {/* Icon */}
         <motion.div 
-          className="absolute top-8 left-1/2 -translate-x-1/2 w-20 h-20 rounded-2xl bg-neutrals-800/50 backdrop-blur flex items-center justify-center border border-neutrals-700/30"
+          className={`absolute left-1/2 -translate-x-1/2 w-20 h-20 rounded-2xl bg-neutrals-800/80 backdrop-blur flex items-center justify-center border border-neutrals-700/30 ${project.image ? 'top-36' : 'top-8'}`}
           aria-hidden="true"
           animate={shouldReduceMotion ? undefined : { y: [0, -8, 0] }}
           transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}

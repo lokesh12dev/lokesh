@@ -15,19 +15,19 @@ const contactOptions = [
   {
     name: 'Gmail',
     icon: Mail,
-    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=riyazakthar46@gmail.com',
+    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=mr.lokesh7@gmail.com',
     color: 'bg-blue-600 hover:bg-blue-700',
   },
   {
     name: 'WhatsApp',
     icon: MessageCircle,
-    href: 'https://wa.me/917200672127',
+    href: 'https://wa.me/917603883879',
     color: 'bg-green-600 hover:bg-green-700',
   },
   {
     name: 'Instagram',
     icon: Instagram,
-    href: 'https://instagram.com/ryzenvfx',
+    href: 'https://www.instagram.com/_im_lokesh___/',
     color: 'bg-pink-600 hover:bg-pink-700',
   },
 ];

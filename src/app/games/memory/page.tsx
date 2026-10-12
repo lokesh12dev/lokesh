@@ -16,14 +16,18 @@ type Card = {
 
 function createCards(): Card[] {
   const pairs = [...emojis, ...emojis];
-  return pairs
+  return pairs.map((emoji, index) => ({
+    id: index,
+    emoji,
+    isFlipped: false,
+    isMatched: false,
+  }));
+}
+
+function shuffleCards(cards: Card[]): Card[] {
+  return [...cards]
     .sort(() => Math.random() - 0.5)
-    .map((emoji, index) => ({
-      id: index,
-      emoji,
-      isFlipped: false,
-      isMatched: false,
-    }));
+    .map((card, index) => ({ ...card, id: index }));
 }
 
 const getInitialBestScore = (): number | null => {
@@ -41,6 +45,12 @@ export default function MemoryGame() {
   const [bestScore, setBestScore] = useState<number | null>(() => getInitialBestScore());
   const [timer, setTimer] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+
+  // Shuffle client-side after mount so SSR HTML matches first client render.
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time post-mount shuffle for SSR safety
+    setCards((prev) => shuffleCards(prev));
+  }, []);
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -106,7 +116,7 @@ export default function MemoryGame() {
   }, [cards, flippedCards, isPlaying, moves, bestScore]);
 
   const resetGame = () => {
-    setCards(createCards());
+    setCards(shuffleCards(createCards()));
     setFlippedCards([]);
     setMoves(0);
     setMatches(0);

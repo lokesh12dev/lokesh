@@ -32,7 +32,7 @@ const securityHeaders = [
       "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com data:",
-      "img-src 'self' https://cdn.sanity.io https://images.unsplash.com https://www.ryzenstudio.com data: blob:",
+      "img-src 'self' https://cdn.sanity.io https://images.unsplash.com https://www.lokesh.studio data: blob:",
       "connect-src 'self' https://cdn.sanity.io https://*.sanity.io",
       "frame-ancestors 'none'",
       "form-action 'self'",
@@ -66,7 +66,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'www.ryzenstudio.com',
+        hostname: 'www.lokesh.studio',
       },
     ],
     // Optimize images
@@ -75,6 +75,7 @@ const nextConfig: NextConfig = {
     // oversized variants rarely served to real viewports.
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    qualities: [75, 80, 90],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
     dangerouslyAllowSVG: false,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",

@@ -1283,7 +1283,7 @@ export function ProjectShowcasePage({ slug }: { slug: string }) {
         </motion.div>
 
         {/* Tabs */}
-        <div className="flex gap-2 mb-8 border-b border-neutrals-800 pb-4 overflow-x-auto scrollbar-hide">
+        <div id="showcase-tabs" className="flex gap-2 mb-8 border-b border-neutrals-800 pb-4 overflow-x-auto scrollbar-hide">
           {(['demos', 'code', 'details', 'faq'] as const).map((tab) => (
             <button
               key={tab}
@@ -1419,25 +1419,45 @@ export function ProjectShowcasePage({ slug }: { slug: string }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
-          className="flex gap-4 mt-12 pt-8 border-t border-neutrals-800"
+          className="flex gap-4 mt-12 pt-8 border-t border-neutrals-800 max-sm:flex-col"
         >
-          <span
-            aria-disabled="true"
-            title="Source code link coming soon"
-            className="flex items-center gap-2 px-6 py-3 min-h-11 rounded-xl bg-neutrals-800/60 border border-neutrals-700/50 text-neutrals-400 backdrop-blur cursor-not-allowed"
+          <a
+            href="https://github.com/lokesh12dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="View source code on GitHub"
+            className="flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-xl bg-neutrals-800/60 border border-neutrals-700/50 text-neutrals-200 hover:border-neutrals-500 hover:text-white transition-colors"
           >
             <Github className="w-5 h-5" aria-hidden="true" />
-            View Source Code (Soon)
-          </span>
-          <span
-            aria-disabled="true"
-            title="Live demo link coming soon"
-            className="flex items-center gap-2 px-6 py-3 min-h-11 rounded-xl text-white/80 transition-colors cursor-not-allowed"
+            View Source Code
+          </a>
+          <button
+            type="button"
+            title={
+              project.slug === 'kadal-thunai'
+                ? 'Open the live Kadal Thunai demo store in a new tab'
+                : project.slug === 'busbuddy'
+                  ? 'Open the live BusBuddy tracking demo in a new tab'
+                  : project.slug === 'saira-tickets'
+                    ? 'Open the live Saira Tickets booking demo in a new tab'
+                    : 'Try the live interactive demo above'
+            }
+            onClick={() => {
+              if (['kadal-thunai', 'busbuddy', 'saira-tickets'].includes(project.slug)) {
+                window.open(`/demo/${project.slug}`, '_blank', 'noopener,noreferrer');
+                return;
+              }
+              setActiveTab('demos');
+              requestAnimationFrame(() => {
+                document.getElementById('showcase-tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              });
+            }}
+            className="flex items-center justify-center gap-2 px-6 py-3 min-h-11 rounded-xl text-white transition-all hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             style={{ background: project.accentColor }}
           >
             <ExternalLink className="w-5 h-5" aria-hidden="true" />
-            Live Demo (Soon)
-          </span>
+            Live Demo
+          </button>
         </motion.div>
       </Container>
     </main>

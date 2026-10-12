@@ -8,7 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { siteConfig } from '@/lib/config/site';
 
 const GMAIL_COMPOSE_URL =
-  'https://mail.google.com/mail/?view=cm&fs=1&to=riyazakthar46@gmail.com';
+  'https://mail.google.com/mail/?view=cm&fs=1&to=mr.lokesh7@gmail.com';
 
 function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {

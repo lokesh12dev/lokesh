@@ -21,23 +21,23 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: 'Riyaz - Personal',
-  description: 'Welcome to my personal space. I like making fun, interactive things with code.',
+  title: 'Lokesh - Personal',
+  description: 'Welcome to my personal space. I like making practical websites and apps with clean UI.',
   alternates: {
-    canonical: 'https://ryzenstudio.com/casual',
+    canonical: 'https://lokesh.studio/casual',
   },
   openGraph: {
-    title: 'Riyaz - Personal',
-    description: 'Welcome to my personal space. I like making fun, interactive things with code.',
-    url: 'https://ryzenstudio.com/casual',
-    siteName: 'RYZEN STUDIO',
+    title: 'Lokesh - Personal',
+    description: 'Welcome to my personal space. I like making practical websites and apps with clean UI.',
+    url: 'https://lokesh.studio/casual',
+    siteName: 'LOKESH',
     type: 'website',
     images: [
       {
-        url: '/images/riyaz-profile.jpg',
+        url: '/images/lokesh-profile-v2.jpg',
         width: 1200,
         height: 630,
-        alt: 'Riyaz - Developer, Athlete, Creator',
+        alt: 'Lokesh - Software Developer',
       },
     ],
   },

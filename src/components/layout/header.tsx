@@ -68,10 +68,7 @@ function Header() {
                 className="text-neutrals-50 hover:text-white transition-colors duration-200 flex items-baseline gap-1"
               >
                 <span className="font-bold text-lg md:text-xl tracking-wider font-mono uppercase">
-                  RYZEN
-                </span>
-                <span className="font-mono text-lg md:text-xl tracking-wider uppercase">
-                  STUDIO
+                  LOKESH
                 </span>
               </Link>
             </div>
@@ -83,7 +80,7 @@ function Header() {
                 className="rounded-full"
               >
                 <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=riyazakthar46@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=mr.lokesh7@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

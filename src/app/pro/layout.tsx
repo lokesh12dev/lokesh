@@ -7,23 +7,23 @@ import { SmoothScrollProvider } from '@/components/smooth-scroll-provider';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'RYZEN STUDIO - Developer Portfolio',
-  description: 'Full-Stack Developer - Professional Portfolio',
+  title: 'LOKESH - Developer Portfolio',
+  description: 'Software Developer, Web Developer & Freelancer - Professional Portfolio',
   alternates: {
-    canonical: 'https://ryzenstudio.com/pro',
+    canonical: 'https://lokesh.studio/pro',
   },
   openGraph: {
-    title: 'RYZEN STUDIO - Developer Portfolio',
-    description: 'Full-Stack Developer - Professional Portfolio',
-    url: 'https://ryzenstudio.com/pro',
-    siteName: 'RYZEN STUDIO',
+    title: 'LOKESH - Developer Portfolio',
+    description: 'Software Developer, Web Developer & Freelancer - Professional Portfolio',
+    url: 'https://lokesh.studio/pro',
+    siteName: 'LOKESH',
     type: 'website',
     images: [
       {
-        url: '/images/riyaz-profile.jpg',
+        url: '/images/lokesh-profile-v2.jpg',
         width: 1200,
         height: 630,
-        alt: 'Riyaz - Full-Stack Developer',
+        alt: 'M. Lokesh - Software Developer',
       },
     ],
   },

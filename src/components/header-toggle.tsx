@@ -4,7 +4,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-const STORAGE_KEY = 'ryzen-view-preference';
+const STORAGE_KEY = 'lokesh-view-preference';
 
 type ViewMode = 'casual' | 'pro';
 

@@ -2,10 +2,10 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'RYZEN STUDIO - Web Design & Development',
-    short_name: 'RYZEN STUDIO',
+    name: 'LOKESH - Software Development & Design',
+    short_name: 'LOKESH',
     description:
-      'Professional Web Design & Development by Riyaz. Creating modern, performant, and visually stunning digital experiences.',
+      'Software Development & Design by M. Lokesh. Creating practical, responsive websites and applications.',
     start_url: '/casual',
     display: 'standalone',
     background_color: '#060918',

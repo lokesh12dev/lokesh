@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-const PREFERENCE_COOKIE = 'ryzen-view-preference';
+const PREFERENCE_COOKIE = 'lokesh-view-preference';
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;

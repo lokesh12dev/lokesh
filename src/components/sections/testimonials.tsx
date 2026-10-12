@@ -22,7 +22,7 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    quote: "We had the pleasure of working with Ryzen on a critical project for our business: migrating our webshop from WooCommerce to Shopify. Choosing Ryzen as the right person for the job was paramount and the communication was outstanding. His expertise, professionalism, and dedication to our project were evident in every interaction. We would not hesitate to recommend Ryzen as he is a true professional who delivers outstanding results.",
+    quote: "We had the pleasure of working with Lokesh on a critical project for our business: migrating our webshop from WooCommerce to Shopify. Choosing Lokesh as the right person for the job was paramount and the communication was outstanding. His expertise, professionalism, and dedication to our project were evident in every interaction. We would not hesitate to recommend Lokesh as he is a true professional who delivers outstanding results.",
     authors: [
       {
         name: "Olaolu Fajembola",
@@ -38,7 +38,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    quote: "Great to work with Ryzen! Ryzen is very responsive and skilled professional designer, who enriches your views with pretty creativity! Will sure work with Ryzen again!",
+    quote: "Great to work with Lokesh! Lokesh is very responsive and skilled professional designer, who enriches your views with pretty creativity! Will sure work with Lokesh again!",
     authors: [
       {
         name: "Yasser Chehade",
@@ -49,7 +49,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 3,
-    quote: "Ryzen immediately understood my idea and vision. He was super professional and at the same time really honest and real, which gave me really good guidance and feedback throughout the whole process. He worked really fast and I had nothing I wanted to change about the result. It turned out exactly how I wanted it to.",
+    quote: "Lokesh immediately understood my idea and vision. He was super professional and at the same time really honest and real, which gave me really good guidance and feedback throughout the whole process. He worked really fast and I had nothing I wanted to change about the result. It turned out exactly how I wanted it to.",
     authors: [
       {
         name: "Malou Idler",
@@ -60,7 +60,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 4,
-    quote: "With his high level of professionalism and intuitive sense of digital design, Ryzen has created an incredibly customized website branding for my business that is simply mind blowing. You better choose RYZEN STUDIO.",
+    quote: "With his high level of professionalism and intuitive sense of digital design, Lokesh has created an incredibly customized website branding for my business that is simply mind blowing. You better choose LOKESH.",
     authors: [
       {
         name: "Caroline Seiffert",
@@ -71,7 +71,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 5,
-    quote: "Ryzen understood and executed our vision with precision and creativity. Always up to hire him again.",
+    quote: "Lokesh understood and executed our vision with precision and creativity. Always up to hire him again.",
     authors: [
       {
         name: "Peer Joeressen",
@@ -82,7 +82,7 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 6,
-    quote: "Working with Ryzen was an absolute pleasure. He's incredibly versatile. Be it UI/UX design or development, he approaches everything with a creative mindset. Would definitely recommend and have had honor to work with him multiple times.",
+    quote: "Working with Lokesh was an absolute pleasure. He's incredibly versatile. Be it UI/UX design or development, he approaches everything with a creative mindset. Would definitely recommend and have had honor to work with him multiple times.",
     authors: [
       {
         name: "Matthew Richardson",

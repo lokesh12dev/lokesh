@@ -81,8 +81,8 @@ function ContactSubmissionConfirmationEmail({
           <Container className="border-neutrals-200/20 my-[48px] w-[512px] rounded-md border-[0.5px] border-solid p-[48px] shadow-lg">
             <Section>
               <Img
-                src="https://ryzenstudio.com/icons/icon-512x512.png"
-                alt="RYZEN STUDIO"
+                src="https://lokesh.studio/icons/icon-512x512.png"
+                alt="LOKESH"
                 width={64}
                 height={64}
                 className="mx-auto"
@@ -117,16 +117,16 @@ function ContactSubmissionConfirmationEmail({
                 as soon as possible.
               </Text>
               <Text className="text-neutrals-50 mb-0 text-[14px]/[24px]">Have a good one!</Text>
-              <Text className="text-neutrals-50 mt-0 text-[14px]/[24px]">Ryzen</Text>
+              <Text className="text-neutrals-50 mt-0 text-[14px]/[24px]">Lokesh</Text>
               <Hr className="border-neutrals-200/20 my-[24px] border-[0.5px] border-solid" />
               <Text className="text-neutrals-300 my-0 text-[12px]/[24px]">
                 You are receiving this email because you have recently submitted an inquiry via the
                 contact form on{' '}
                 <a
-                  href="https://ryzenstudio.com"
+                  href="https://lokesh.studio"
                   className="text-neutrals-100 no-underline"
                 >
-                  ryzenstudio.com
+                  lokesh.studio
                 </a>
                 . This is an automatic notification, please do not reply to this email!
               </Text>

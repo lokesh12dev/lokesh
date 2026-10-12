@@ -44,9 +44,9 @@ const socials = [
     icon: Icons.Instagram,
   },
   {
-    label: 'View LinkedIn profile',
-    href: siteConfig.links.linkedin,
-    icon: Icons.LinkedIn,
+    label: 'Send email',
+    href: siteConfig.links.email,
+    icon: Icons.Envelope,
   },
 ] as const;
 

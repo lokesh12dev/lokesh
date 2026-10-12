@@ -14,7 +14,7 @@ type Props = {
 function isSafeHttpUrl(url: string | undefined): url is string {
   if (!url) return false;
   try {
-    const parsed = new URL(url, 'https://ryzenstudio.com');
+    const parsed = new URL(url, 'https://lokesh.studio');
     return parsed.protocol === 'http:' || parsed.protocol === 'https:';
   } catch {
     return false;

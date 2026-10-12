@@ -54,12 +54,18 @@ const getInitialPuzzleBestScore = (): number | null => {
 };
 
 export default function PuzzleGame() {
-  const [tiles, setTiles] = useState<Tile[]>(() => shufflePuzzle(createPuzzle()));
+  // Start solved (deterministic for SSR) and shuffle once after mount.
+  const [tiles, setTiles] = useState<Tile[]>(() => createPuzzle());
   const [moves, setMoves] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
   const [bestScore, setBestScore] = useState<number | null>(() => getInitialPuzzleBestScore());
   const [timer, setTimer] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time post-mount shuffle for SSR safety
+    setTiles(shufflePuzzle(createPuzzle()));
+  }, []);
 
   useEffect(() => {
     let interval: NodeJS.Timeout;

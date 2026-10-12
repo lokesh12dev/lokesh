@@ -152,10 +152,7 @@ export function ProHeader() {
                 className="text-neutrals-50 hover:text-white transition-colors duration-200 flex items-baseline gap-1"
               >
                 <span className="font-bold text-lg md:text-xl tracking-wider font-mono uppercase">
-                  RYZEN
-                </span>
-                <span className="font-mono text-lg md:text-xl tracking-wider uppercase">
-                  STUDIO
+                  LOKESH
                 </span>
               </Link>
             </div>

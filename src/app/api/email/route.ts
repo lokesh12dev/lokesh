@@ -6,7 +6,7 @@ import { NextResponse } from 'next/server';
 import { headers } from 'next/headers';
 
 const SENDER_EMAIL = siteConfig.email;
-const NOREPLY_EMAIL = 'noreply@ryzenstudio.com';
+const NOREPLY_EMAIL = 'noreply@lokesh.studio';
 
 // Rate limiting configuration (in-memory, use Redis for production at scale)
 // NOTE: in-memory map only works per-instance; on serverless (Vercel) each
@@ -95,8 +95,8 @@ export async function POST(request: Request) {
   const referer = headersList.get('referer');
   const host = headersList.get('x-forwarded-host') ?? headersList.get('host');
   const allowedOrigins = [
-    'https://ryzenstudio.com',
-    'https://www.ryzenstudio.com',
+    'https://lokesh.studio',
+    'https://www.lokesh.studio',
     process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : null,
   ].filter((o): o is string => Boolean(o));
 
@@ -149,15 +149,15 @@ export async function POST(request: Request) {
     const sanitizedMessage = message.trim().slice(0, 1800);
 
     await resend.emails.send({
-      from: `Noreply RYZEN STUDIO <${NOREPLY_EMAIL}>`,
+      from: `Noreply LOKESH <${NOREPLY_EMAIL}>`,
       to: SENDER_EMAIL,
       replyTo: sanitizedEmail,
-      subject: `${sanitizedName} ― RYZEN STUDIO Inquiry`,
+      subject: `${sanitizedName} ― LOKESH Inquiry`,
       text: sanitizedMessage,
     });
 
     await resend.emails.send({
-      from: `Noreply RYZEN STUDIO <${NOREPLY_EMAIL}>`,
+      from: `Noreply LOKESH <${NOREPLY_EMAIL}>`,
       to: sanitizedEmail,
       subject: `Thanks for getting in touch ${sanitizedName}!`,
       react: ContactSubmissionConfirmationEmail({ 

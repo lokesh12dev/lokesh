@@ -3,7 +3,7 @@
 import { MonoImage } from '@/components/mono-image';
 import { motion } from 'framer-motion';
 import { Dumbbell, Target, Heart, Flame, Clock, TrendingUp } from 'lucide-react';
-import riyazImg from '@/assets/images/riyaz.jpg';
+import lokeshImg from '@/assets/images/lokesh.jpg';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -79,8 +79,8 @@ export default function FitnessPage() {
           >
             <motion.div variants={fadeInUp} className="aspect-[4/5] relative">
               <MonoImage
-                src={riyazImg.src}
-                alt="Riyaz - Fitness"
+                src={lokeshImg.src}
+                alt="Lokesh - Fitness"
                 fill
                 containerClassName="h-full"
                 caption="The journey never ends"

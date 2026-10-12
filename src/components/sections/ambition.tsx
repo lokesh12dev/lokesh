@@ -68,7 +68,7 @@ const nasaHackResults = [
 
 const macPrompt = (
   <>
-    <span className="text-cyan-400">ryzen@MacBook-Pro</span>
+    <span className="text-cyan-400">lokesh@MacBook-Pro</span>
     <span className="text-white">:</span>
     <span className="text-blue-400">~/hacker-dreams</span>
     <span className="text-white">$ </span>

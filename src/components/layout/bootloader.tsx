@@ -32,7 +32,7 @@ const BootloaderSequence: React.FC<BootloaderProps> = ({ onBootComplete }) => {
   }, [onBootComplete]);
 
   const bootSequence = useMemo(() => [
-    `ssh ssh@${randomIP} -u ryzen`,
+    `ssh ssh@${randomIP} -u lokesh`,
     'Password: ********',
     '',
     'Welcome to Ubuntu 22.04.2 LTS (GNU/Linux 5.15.0-78-generic x86_64)',
@@ -45,24 +45,24 @@ const BootloaderSequence: React.FC<BootloaderProps> = ({ onBootComplete }) => {
     '',
     'System load:  0.03    Processes: 111    Memory usage: 24%',
     '',
-    'ryzen@ubuntu:~$ whoami',
-    'ryzen',
-    'ryzen@ubuntu:~$ pwd',
-    '/home/ryzen',
-    'ryzen@ubuntu:~$ ls -la',
+    'lokesh@ubuntu:~$ whoami',
+    'lokesh',
+    'lokesh@ubuntu:~$ pwd',
+    '/home/lokesh',
+    'lokesh@ubuntu:~$ ls -la',
     'total 64',
-    'drwxr-xr-x 8 ryzen ryzen 4096 Apr 28 17:48 .',
+    'drwxr-xr-x 8 lokesh lokesh 4096 Apr 28 17:48 .',
     'drwxr-xr-x 3 root  root  4096 Apr 28 17:45 ..',
-    '-rwx------ 1 ryzen ryzen 2048 Apr 28 17:47 .stealth_init',
-    '-rw-r--r-- 1 ryzen ryzen  256 Apr 28 17:48 .portfolio_config',
-    'drwxr-xr-x 2 ryzen ryzen 4096 Apr 28 17:48 creative_arsenal',
-    'ryzen@ubuntu:~$ cat .portfolio_config',
-    '[RYZEN_STUDIO_CONFIG]',
+    '-rwx------ 1 lokesh lokesh 2048 Apr 28 17:47 .stealth_init',
+    '-rw-r--r-- 1 lokesh lokesh  256 Apr 28 17:48 .portfolio_config',
+    'drwxr-xr-x 2 lokesh lokesh 4096 Apr 28 17:48 creative_arsenal',
+    'lokesh@ubuntu:~$ cat .portfolio_config',
+    '[LOKESH_STUDIO_CONFIG]',
     'MODE=CREATIVE_GENIUS',
     'INNOVATION_LEVEL=MAXIMUM',
     'DESIGN_PROTOCOLS=ACTIVATED',
-    'ryzen@ubuntu:~$ bash ./.stealth_init',
-    '[+] Initializing RYZEN STUDIO modules...',
+    'lokesh@ubuntu:~$ bash ./.stealth_init',
+    '[+] Initializing LOKESH modules...',
     '[+] Scanning creative frequencies...',
     '[+] Preparing to unpack portfolio matrix...',
     '[+] Unpacking visual assets... [████████████████████] 100%',
@@ -77,12 +77,12 @@ const BootloaderSequence: React.FC<BootloaderProps> = ({ onBootComplete }) => {
     '[+] Portfolio neural network: ONLINE',
     '[+] Creative arsenal: LOADED',
     '[+] Design logs synchronized...',
-    '[+] RYZEN STUDIO initialization: COMPLETE',
+    '[+] LOKESH initialization: COMPLETE',
     '[!] WARNING: Extreme creativity levels detected!',
     '[!] Prepare for visual overload...',
-    'ryzen@ubuntu:~$ echo "Welcome to the future of design"',
+    'lokesh@ubuntu:~$ echo "Welcome to the future of design"',
     'Welcome to the future of design',
-    'ryzen@ubuntu:~$'
+    'lokesh@ubuntu:~$'
   ], [randomIP]);
 
   useEffect(() => {
@@ -125,7 +125,7 @@ const BootloaderSequence: React.FC<BootloaderProps> = ({ onBootComplete }) => {
             currentLine.includes('[+] Unpacking visual assets') || 
             currentLine.includes('[!] WARNING') || 
             currentLine.includes('[+] Portfolio neural network') ||
-            currentLine.includes('[+] RYZEN STUDIO initialization'))) {
+            currentLine.includes('[+] LOKESH initialization'))) {
           lineDelay = 150; // Dramatic effect
         } else if (currentLine && (currentLine.includes('███') || currentLine.includes('SUCCESS'))) {
           lineDelay = 80; // Medium speed
@@ -201,7 +201,7 @@ const BootloaderSequence: React.FC<BootloaderProps> = ({ onBootComplete }) => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                WELCOME TO RYZEN STUDIO
+                WELCOME TO LOKESH
               </motion.div>
             </div>
           </div>
@@ -217,29 +217,29 @@ const getInitialBootloaderState = (): { shouldShow: boolean; showPrompt: boolean
     return { shouldShow: false, showPrompt: false };
   }
   
-  const hasVisited = localStorage.getItem('ryzen-studio-visited');
-  const lastVisit = localStorage.getItem('ryzen-studio-last-visit');
-  const refreshCount = parseInt(localStorage.getItem('ryzen-studio-refresh-count') || '0');
-  const lastRefreshTime = parseInt(localStorage.getItem('ryzen-studio-last-refresh') || '0');
+  const hasVisited = localStorage.getItem('lokesh-studio-visited');
+  const lastVisit = localStorage.getItem('lokesh-studio-last-visit');
+  const refreshCount = parseInt(localStorage.getItem('lokesh-studio-refresh-count') || '0');
+  const lastRefreshTime = parseInt(localStorage.getItem('lokesh-studio-last-refresh') || '0');
   const now = Date.now();
   
   const currentUrl = window.location.href;
-  const lastUrl = localStorage.getItem('ryzen-studio-last-url');
+  const lastUrl = localStorage.getItem('lokesh-studio-last-url');
   
   // Update localStorage for tracking
   if (lastUrl && lastUrl !== currentUrl) {
-    localStorage.setItem('ryzen-studio-refresh-count', '0');
+    localStorage.setItem('lokesh-studio-refresh-count', '0');
   } else {
     if (now - lastRefreshTime > 30000) {
-      localStorage.setItem('ryzen-studio-refresh-count', '1');
+      localStorage.setItem('lokesh-studio-refresh-count', '1');
     } else {
-      localStorage.setItem('ryzen-studio-refresh-count', (refreshCount + 1).toString());
+      localStorage.setItem('lokesh-studio-refresh-count', (refreshCount + 1).toString());
     }
   }
-  localStorage.setItem('ryzen-studio-last-url', currentUrl);
-  localStorage.setItem('ryzen-studio-last-refresh', now.toString());
+  localStorage.setItem('lokesh-studio-last-url', currentUrl);
+  localStorage.setItem('lokesh-studio-last-refresh', now.toString());
   
-  const currentRefreshCount = parseInt(localStorage.getItem('ryzen-studio-refresh-count') || '1');
+  const currentRefreshCount = parseInt(localStorage.getItem('lokesh-studio-refresh-count') || '1');
   
   // Show bootloader if: never visited OR last visit was more than 1 hour ago
   if (!hasVisited || (lastVisit && now - parseInt(lastVisit) > 60 * 60 * 1000)) {
@@ -248,7 +248,7 @@ const getInitialBootloaderState = (): { shouldShow: boolean; showPrompt: boolean
   
   // Show prompt if user refreshed 2+ times within 30 seconds
   if (currentRefreshCount >= 2 && hasVisited && lastUrl === currentUrl) {
-    localStorage.setItem('ryzen-studio-refresh-count', '0');
+    localStorage.setItem('lokesh-studio-refresh-count', '0');
     return { shouldShow: false, showPrompt: true };
   }
   
@@ -256,32 +256,30 @@ const getInitialBootloaderState = (): { shouldShow: boolean; showPrompt: boolean
 };
 
 function Bootloader() {
-  // Use lazy initialization to avoid setState in useEffect.
-  // Users who prefer reduced motion never see the boot animation.
-  const [shouldShowBootloader, setShouldShowBootloader] = useState(() => {
-    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      return false;
-    }
-    const state = getInitialBootloaderState();
-    return state.shouldShow;
-  });
-  const [isBootloaderActive, setIsBootloaderActive] = useState(() => {
-    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      return false;
-    }
-    const state = getInitialBootloaderState();
-    return state.shouldShow;
-  });
-  const [showPrompt, setShowPrompt] = useState(() => {
-    const state = getInitialBootloaderState();
-    return state.showPrompt;
-  });
+  // Render nothing until mounted so SSR HTML matches the first client render.
+  // Visibility is decided client-side in an effect (localStorage is client-only).
+  const [isMounted, setIsMounted] = useState(false);
+  const [shouldShowBootloader, setShouldShowBootloader] = useState(false);
+  const [isBootloaderActive, setIsBootloaderActive] = useState(false);
+  const [showPrompt, setShowPrompt] = useState(false);
   useLockBody(isBootloaderActive);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional post-mount sync from client-only storage
+    setIsMounted(true);
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+    const state = getInitialBootloaderState();
+    setShouldShowBootloader(state.shouldShow);
+    setIsBootloaderActive(state.shouldShow);
+    setShowPrompt(state.showPrompt);
+  }, []);
 
   const handleBootComplete = useCallback(() => {
     // Mark as visited and set timestamp
-    localStorage.setItem('ryzen-studio-visited', 'true');
-    localStorage.setItem('ryzen-studio-last-visit', Date.now().toString());
+    localStorage.setItem('lokesh-studio-visited', 'true');
+    localStorage.setItem('lokesh-studio-last-visit', Date.now().toString());
     
     // Immediately hide bootloader
     setIsBootloaderActive(false);
@@ -312,6 +310,10 @@ function Bootloader() {
   const handlePromptNo = () => {
     setShowPrompt(false);
   };
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <AnimatePresence mode="wait">

@@ -34,7 +34,7 @@ const AnimatedLetter = ({ letter, variants }: { letter: string; variants: typeof
 );
 
 const AnimatedText = () => {
-  const targetText = "Hello, I'm Riyaz";
+  const targetText = "Hello, I'm Lokesh";
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const shouldReduceMotion = useReducedMotion();
@@ -91,7 +91,7 @@ const AnimatedText = () => {
           </motion.span>
         </div>
       </motion.div>
-      <p className="sr-only">Hello, I&apos;m Riyaz — Full-Stack Developer</p>
+      <p className="sr-only">Hello, I&apos;m Lokesh — Software Developer</p>
 
       {/* Single h1 for SEO: one top-level heading with stacked lines */}
       <motion.h1
@@ -106,9 +106,9 @@ const AnimatedText = () => {
           ...poppinsStyle,
         }}
       >
-        {/* FULL-STACK */}
+        {/* SOFTWARE */}
         <span className="block text-[clamp(2rem,11vw,7.9rem)] leading-[1.05]">
-          {Array.from('FULL-STACK').map((letter, index) => (
+          {Array.from('SOFTWARE').map((letter, index) => (
             <AnimatedLetter key={index} letter={letter} variants={letterVariant} />
           ))}
         </span>

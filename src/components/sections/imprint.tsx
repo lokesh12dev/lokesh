@@ -16,17 +16,17 @@ export default function ImprintSection() {
               Imprint
             </h1>
             <p className="text-neutrals-300 text-lg">
-              Contact details and legal information for RYZEN STUDIO
+              Contact details and legal information for LOKESH
             </p>
           </div>
           <address className="grid gap-y-16 not-italic">
             <div>
               <Heading>Details</Heading>
               <Paragraph>
-                <span className="text-neutrals-100">RYZEN STUDIO</span><br />
+                <span className="text-neutrals-100">LOKESH</span><br />
                 Chennai<br />
-                600119, Tamil Nadu<br /><br />
-                CEO: Riyaz Akthar
+                Tamil Nadu, India<br /><br />
+                CEO: M. Lokesh
               </Paragraph>
             </div>
             <div>
@@ -34,17 +34,17 @@ export default function ImprintSection() {
               <Paragraph>
                 E-Mail:
                 <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=riyazakthar46@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=mr.lokesh7@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Hit us up"
                   className="text-neutrals-100 hover:text-primary border-b border-current transition-colors"
                 >
-                  riyazakthar46@gmail.com</a
+                  mr.lokesh7@gmail.com</a
                 ><br />Phone number: <a
-                  href="tel:+917200672127"
+                  href="tel:+917603883879"
                   className="text-neutrals-100 hover:text-primary border-b border-current transition-colors"
-                >7200672127</a>
+                >7603883879</a>
               </Paragraph>
             </div>
           </address>

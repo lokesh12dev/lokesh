@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { motion, useMotionValue, useTransform, AnimatePresence, useReducedMotion, type PanInfo } from 'framer-motion';
-import { Fish, Bus, Ticket, ArrowRight, LucideIcon, X } from 'lucide-react';
+import { Fish, Bus, Ticket, ArrowRight, Eye, LucideIcon, X } from 'lucide-react';
 
 // ============================================================================
 // TYPES
@@ -375,11 +375,12 @@ export function ProjectCards() {
       </div>
 
       {/* Controls */}
-      <div className="flex justify-center items-center gap-4 mt-8">
+      <div className="flex justify-center items-center gap-3 mt-8">
         <button
           type="button"
           onClick={() => handleSwipe()}
-          aria-label="Show next project"
+          aria-label="Skip to next project"
+          title="Skip"
           className="w-12 h-12 min-h-11 min-w-11 rounded-full border border-neutrals-700 flex items-center justify-center text-neutrals-500 hover:text-neutrals-300 hover:border-neutrals-600 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           <X className="w-5 h-5" aria-hidden="true" />
@@ -407,10 +408,24 @@ export function ProjectCards() {
           ))}
         </div>
 
+        {/* View box — opens the current project */}
         <button
           type="button"
           onClick={() => handleViewDetails(currentProject.slug)}
           aria-label={`View details for ${currentProject.title}`}
+          title={`View ${currentProject.title}`}
+          className="h-12 min-h-11 px-5 rounded-full bg-primary flex items-center justify-center gap-2 text-white text-sm font-bold hover:brightness-110 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        >
+          <Eye className="w-5 h-5" aria-hidden="true" />
+          View
+        </button>
+
+        {/* Next arrow — swipes to the next project card */}
+        <button
+          type="button"
+          onClick={() => handleSwipe()}
+          aria-label="Show next project"
+          title="Next project"
           className="w-12 h-12 min-h-11 min-w-11 rounded-full border border-primary/50 flex items-center justify-center text-primary hover:bg-primary/10 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
         >
           <ArrowRight className="w-5 h-5" aria-hidden="true" />
@@ -419,7 +434,7 @@ export function ProjectCards() {
 
       {/* Hint */}
       <p className="text-center text-neutrals-400 text-xs mt-5">
-        Swipe or tap arrow for details
+        Swipe or tap → for next · View to open details
       </p>
       <p role="status" aria-live="polite" aria-atomic="true" className="sr-only">
         Project {currentIndex + 1} of {projects.length}: {currentProject.title}

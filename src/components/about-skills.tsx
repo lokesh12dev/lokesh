@@ -254,27 +254,27 @@ lokesh@portfolio:~$
           >
             {displayedText.split('\n').map((line, i) => renderTerminalLine(line, i))}
             <span aria-hidden="true" className="inline-block w-2.5 h-[1.1em] align-middle bg-[#39FF14] animate-pulse" />
-            {typingComplete && (
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mt-5 flex flex-wrap gap-3"
-              >
-                <a
-                  href="/pro#work"
-                  className="px-5 py-2.5 min-h-11 inline-flex items-center rounded-xl bg-[#39FF14]/15 border border-[#39FF14]/40 text-[#39FF14] text-sm font-mono font-bold hover:bg-[#39FF14]/25 transition-colors"
-                >
-                  ./view-work →
-                </a>
-                <a
-                  href="/pro#contact"
-                  className="px-5 py-2.5 min-h-11 inline-flex items-center rounded-xl bg-white/5 border border-white/15 text-white text-sm font-mono hover:bg-white/10 transition-colors"
-                >
-                  ./say-hello
-                </a>
-              </motion.div>
-            )}
           </div>
+          {typingComplete && (
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex flex-wrap gap-3 border-t border-[#30363d] bg-[#161b22] px-6 py-4"
+            >
+              <a
+                href="/pro#work"
+                className="px-5 py-2.5 min-h-11 inline-flex items-center rounded-xl bg-[#39FF14]/15 border border-[#39FF14]/40 text-[#39FF14] text-sm font-mono font-bold hover:bg-[#39FF14]/25 transition-colors"
+              >
+                ./view-work →
+              </a>
+              <a
+                href="/pro#contact"
+                className="px-5 py-2.5 min-h-11 inline-flex items-center rounded-xl bg-white/5 border border-white/15 text-white text-sm font-mono hover:bg-white/10 transition-colors"
+              >
+                ./say-hello
+              </a>
+            </motion.div>
+          )}
         </div>
       </motion.div>
     </div>

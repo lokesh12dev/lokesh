@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import lokeshImage from '@/assets/images/lokesh.jpg';
+import lokeshSunrise from '@/assets/images/lokesh-mountain-sunrise.png';
 import { StarsBackground } from '@/components/stars-background';
 import { TypingHeading } from '@/components/typing-heading';
 import { Caption, Paragraph } from '@/components/ui/typography';
@@ -30,57 +30,18 @@ export default function AboutSection() {
           <div className="absolute h-72 w-72 rounded-full bg-primary/25 blur-[110px]" />
           <div className="absolute h-40 w-40 translate-x-24 translate-y-24 rounded-full bg-[#e1a653]/15 blur-[80px]" />
 
-          {/* Circular portrait with effects */}
-          <div className="group relative h-60 w-60 shrink-0 sm:h-80 sm:w-80 lg:h-[380px] lg:w-[380px]">
-            {/* Slim rotating conic ring */}
-            <div className="absolute -inset-2 animate-[spin_18s_linear_infinite] rounded-full bg-[conic-gradient(from_0deg,#6919FF_0%,transparent_28%,rgba(225,166,83,0.9)_50%,transparent_72%,#6919FF_100%)] opacity-90" />
-            {/* Crisp inner edge */}
-            <div className="pointer-events-none absolute -inset-2 rounded-full ring-1 ring-white/25" />
-            {/* Photo */}
-            <div className="absolute inset-0 overflow-hidden rounded-full bg-neutrals-800 shadow-[0_0_70px_-12px_rgba(105,25,255,0.6)]">
-              <Image
-                src={lokeshImage}
-                alt="M. Lokesh, Software Developer"
-                fill
-                sizes="(max-width: 640px) 240px, (max-width: 1024px) 320px, 380px"
-                quality={90}
-                className="object-cover object-[center_12%] grayscale transition-[filter] duration-500 group-hover:grayscale-0"
-              />
-            </div>
-            {/* Sparkle accents */}
-            <span className="absolute -top-1 left-10 h-2.5 w-2.5 animate-pulse rounded-full bg-[#e1a653] shadow-[0_0_12px_2px_rgba(225,166,83,0.8)]" />
-            <span className="absolute right-3 top-1/3 h-2 w-2 animate-pulse rounded-full bg-primary shadow-[0_0_12px_2px_rgba(105,25,255,0.8)]" />
-            <span className="absolute bottom-8 left-1 h-1.5 w-1.5 animate-pulse rounded-full bg-white/80" />
-
-            {/* Floating chips — desktop only */}
-            <div className="absolute -right-6 top-8 hidden rounded-2xl border border-white/15 bg-neutrals-900/80 px-3 py-2 shadow-xl backdrop-blur-md sm:block lg:-right-10">
-              <p className="text-neutrals-50 text-xs font-bold leading-tight">Software Developer</p>
-              <p className="text-neutrals-300 text-[11px] leading-tight">Web · Apps · UI/UX</p>
-            </div>
-            <div className="absolute -left-6 bottom-8 hidden items-center gap-2 rounded-2xl border border-white/15 bg-neutrals-900/80 px-3 py-2 shadow-xl backdrop-blur-md sm:flex lg:-left-10">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
-              </span>
-              <div>
-                <p className="text-neutrals-50 text-xs font-bold leading-tight">M. Lokesh</p>
-                <p className="text-neutrals-300 text-[11px] leading-tight">Chennai · Open to work</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Chips below portrait — mobile only */}
-          <div className="mt-7 flex w-full max-w-xs flex-col items-stretch gap-2.5 sm:hidden">
-            <div className="rounded-2xl border border-white/15 bg-neutrals-900/80 px-4 py-2.5 text-center shadow-xl backdrop-blur-md">
-              <p className="text-neutrals-50 text-sm font-bold leading-tight">Software Developer</p>
-              <p className="text-neutrals-300 text-xs leading-tight">Web · Apps · UI/UX</p>
-            </div>
-            <div className="flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-neutrals-900/80 px-4 py-2.5 shadow-xl backdrop-blur-md">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
-              </span>
-              <p className="text-neutrals-50 text-sm font-bold leading-tight">M. Lokesh <span className="text-neutrals-300 font-normal">· Chennai · Open to work</span></p>
+          {/* Sunrise portrait with centered name */}
+          <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
+            <Image
+              src={lokeshSunrise}
+              alt=""
+              sizes="(max-width: 640px) 90vw, 420px"
+              quality={90}
+              className="h-auto w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-white text-4xl sm:text-5xl font-bold tracking-[0.3em] uppercase select-none [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]">LOKESH</span>
             </div>
           </div>
         </div>

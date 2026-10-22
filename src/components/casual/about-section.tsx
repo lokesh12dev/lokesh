@@ -4,6 +4,7 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import lokeshSunrise from '@/assets/images/lokesh-mountain-sunrise.png';
 import { 
   Cloud, 
   Dumbbell, 
@@ -133,59 +134,19 @@ export function AboutSection() {
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
             {/* Image Side */}
             <Reveal className="relative">
-              <div className="relative flex items-center justify-center py-10">
-                {/* Soft glow */}
-                <div className="absolute h-64 w-64 rounded-full bg-[#d4af37]/25 blur-[90px]" />
-
-                {/* Circular portrait with effects */}
-                <div className="group relative h-64 w-64 sm:h-80 sm:w-80 lg:h-[340px] lg:w-[340px]">
-                  {/* Rotating dashed orbit ring */}
-                  <motion.svg
-                    aria-hidden="true"
-                    viewBox="0 0 100 100"
-                    className="absolute -inset-5 animate-[spin_22s_linear_infinite]"
-                  >
-                    <circle
-                      cx="50"
-                      cy="50"
-                      r="48"
-                      fill="none"
-                      stroke="#d4af37"
-                      strokeWidth="1.2"
-                      strokeDasharray="4 5"
-                      strokeLinecap="round"
-                      opacity="0.8"
-                    />
-                  </motion.svg>
-                  {/* Rotating conic sheen ring */}
-                  <div className="absolute -inset-2.5 animate-[spin_12s_linear_infinite_reverse] rounded-full bg-[conic-gradient(from_0deg,#d4af37,transparent_30%,#1a1a2e_50%,transparent_70%,#d4af37)]" />
-
-                  {/* Photo */}
-                  <div className="absolute inset-0 overflow-hidden rounded-full bg-[#1a1a2e] shadow-[0_20px_60px_-15px_rgba(212,175,55,0.45)] ring-2 ring-white/60">
-                    <Image
-                      src="/images/lokesh-profile-v2.jpg"
-                      alt="M. Lokesh - Software Developer"
-                      fill
-                      quality={90}
-                      className="object-cover object-[center_12%] grayscale group-hover:grayscale-0 transition-all duration-700"
-                      sizes="(max-width: 768px) 80vw, 340px"
-                    />
-                  </div>
-
-                  {/* Sparkle accents */}
-                  <span className="absolute -top-1 left-10 h-2.5 w-2.5 animate-pulse rounded-full bg-[#d4af37] shadow-[0_0_12px_2px_rgba(212,175,55,0.8)]" />
-                  <span className="absolute bottom-8 -right-1 h-2 w-2 animate-pulse rounded-full bg-[#1a1a2e]" />
+              {/* Sunrise portrait with centered name */}
+              <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-3xl border-2 border-[#d4af37] shadow-2xl">
+                <Image
+                  src={lokeshSunrise}
+                  alt="Lokesh"
+                  sizes="(max-width: 768px) 80vw, 420px"
+                  quality={90}
+                  className="h-auto w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-white text-4xl sm:text-5xl font-bold tracking-[0.3em] uppercase select-none [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]">LOKESH</span>
                 </div>
-
-                {/* Floating badge */}
-                <motion.div
-                  className="absolute bottom-2 right-2 md:right-6 bg-[#d4af37] text-[#1a1a2e] px-6 py-3 font-bold shadow-lg"
-                  initial={{ rotate: -5 }}
-                  whileHover={{ rotate: 0, scale: 1.05 }}
-                  style={{ fontFamily: "'Mosk', sans-serif" }}
-                >
-                  Class of &apos;25
-                </motion.div>
               </div>
             </Reveal>
 

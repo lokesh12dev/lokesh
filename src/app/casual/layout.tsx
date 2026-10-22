@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/lokesh-profile-v2.jpg',
-        width: 1200,
-        height: 630,
+    url: '/images/lokesh-mountain-sunrise.png',
+    width: 1672,
+    height: 941,
         alt: 'Lokesh - Software Developer',
       },
     ],

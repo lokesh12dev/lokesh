@@ -1,63 +1,81 @@
 # LOKESH
 
-<p align="center">
-  <strong>🚀 Software Development Portfolio by M. Lokesh</strong>
-</p>
-
-<p align="center">
-  © 2026 LOKESH - Built by M. Lokesh
-</p>
-
----
-
-## About
-
-LOKESH is a modern portfolio website for M. Lokesh — Software Developer, Web Developer & Freelancer from Chennai. Showcasing websites, applications, UI/UX work and client projects.
+Software development and design portfolio of M. Lokesh — software developer, web developer and freelancer from Chennai. Built with Next.js 16 (App Router), React 19 and Tailwind CSS 4.
 
 ## Features
 
-- ⚡ **Next.js 16** with App Router
-- 🎨 **Tailwind CSS 4** for styling
-- 🎬 **Framer Motion** animations
-- 🎮 **Interactive Mini-Games**
-- 📱 **Fully Responsive** design
-- 🖥️ **Terminal Bootloader** experience
-- 🎯 **Custom Cursor** effects
-- 📧 **Contact Form** with Resend integration
-
-## Interactive Features
-
-- **Fun Zone** - Interactive gender selection game
-- **Ambition Section** - Choose your path with terminal hacker mode
-- **Memory Game** - Test your memory with card matching
-- **Snake Game** - Classic snake game
-- **Typing Speed Test** - Test your typing skills
+- Terminal bootloader home page with animated intro and custom cursor
+- Smooth scrolling, scroll progress/reveal, parallax and animated backgrounds (stars, matrix, grid, video)
+- Casual site with its own theme: advice, contact, fitness and gallery pages
+- Pro mode with a games hub: memory, puzzle, snake, space and typing games
+- Project showcase backed by Sanity CMS with dynamic `/project/[slug]` pages
+- Live demos for BusBuddy, Kadal Thunai and Saira Tickets
+- Contact form wired to Resend with zod validation and per-IP rate limiting
 
 ## Getting Started
 
+Prerequisites: Node.js 20+ and npm.
+
 ```bash
-# Install dependencies
 npm install
-
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
+npm run dev     # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the site.
+Production build:
 
-## Tech Stack
+```bash
+npm run build
+npm run start
+```
 
-- **Framework:** Next.js 16
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS 4
-- **Animation:** Framer Motion
-- **CMS:** Sanity
-- **Email:** Resend
-- **Deployment:** Vercel
+Lint:
 
----
+```bash
+npm run lint
+```
 
-<p align="center">Made with ❤️ by M. Lokesh</p>
+## Project Structure
+
+```
+src/
+├── app/                  # Next.js App Router routes
+│   ├── ambition/         # ambition section
+│   ├── casual/           # casual site: advice, contact, fitness, gallery
+│   ├── demo/             # busbuddy, kadal-thunai, saira-tickets
+│   ├── fun/              # fun zone
+│   ├── games/            # memory, puzzle, snake, space, typing
+│   ├── imprint/          # imprint page
+│   ├── pro/              # pro site with games hub
+│   ├── project/          # [slug], bus-tracker, kadal-thunai, saira-tickets
+│   ├── showcase/         # project showcase
+│   └── api/email/        # contact form endpoint (Resend)
+├── components/           # layout, sections, casual/, pro/, demo/, project-showcase/, ui/
+├── emails/               # Resend email templates
+├── hooks/                # custom hooks
+├── lib/                  # config, resend, sanity, send-email, utils, validations
+├── styles/               # casual theme CSS
+└── types/                # type declarations
+```
+
+## Environment Variables
+
+All variables are optional and validated with `@t3-oss/env-nextjs` and zod (set `SKIP_ENV_VALIDATION=1` to skip validation). Create `.env.local` with any of:
+
+```bash
+# server
+RESEND_API_KEY=                            # required to actually send emails
+
+# client
+NEXT_PUBLIC_SANITY_PROJECT_ID=
+NEXT_PUBLIC_SANITY_DATASET=production
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=
+```
+
+## Contact Form
+
+`POST /api/email` validates the submission with zod, caps request bodies at 20KB and rate-limits to 5 requests per minute per IP, then sends a confirmation email via Resend using templates from `src/emails/`.
+
+## License
+
+© 2026 M. Lokesh

@@ -144,9 +144,6 @@ export function AboutSection() {
                   className="h-auto w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-white text-4xl sm:text-5xl font-bold tracking-[0.3em] uppercase select-none [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]">LOKESH</span>
-                </div>
               </div>
             </Reveal>
 
